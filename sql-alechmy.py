@@ -17,26 +17,15 @@ from sqlalchemy import create_engine, MetaData, Table
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[ ]:
-
-
-# PostgreSQL parameters
-POSTGRES_ADDRESS = '12.64.211.212'
-POSTGRES_PORT = '7001'
-POSTGRES_USERNAME = 'ammar'
-POSTGRES_PASSWORD = 'randomshit$'
-POSTGRES_DBNAME = 'test'
-
-# PostgreSQL connection string
-postgres_str = ('postgresql://{username}:{password}@{ipaddress}:{port}/{dbname}'
-                .format(username=POSTGRES_USERNAME, 
-                        password=POSTGRES_PASSWORD,
-                        ipaddress=POSTGRES_ADDRESS,
-                        port=POSTGRES_PORT,
-                        dbname=POSTGRES_DBNAME))
+postgresstm = ('postgresql://{username}:{password}@{ipaddress}:{port}/{dbname}'
+                .format(username='ammar', 
+                        password='randomshit$',
+                        ipaddress='12.64.211.212',
+                        port='7001',
+                        dbname='test'))
 
 # Create connection engine
-conn = create_engine(postgres_str)
+conn = create_engine(postgresstm)
 # #Then, print the names of the tables the engine contains using the .table_names()
 print(conn.table_names())
 
